@@ -22,6 +22,8 @@
   dream
   dune-build-info
   luv
+  metrics-lwt
+  metrics-rusage
   (alcotest :with-test)
   (odoc :with-doc)))
 
