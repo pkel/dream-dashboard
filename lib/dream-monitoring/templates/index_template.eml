@@ -6,7 +6,9 @@ let render
   ~platform
   ~architecture
   ~uptime
+  ~load
   () =
+  let load0, load1, load2 = load in
   Layout_template.render ~prefix ~title:"Dream Dashboard" @@
   <div class="relative bg-gray-200">
     <div class="absolute inset-0 flex flex-col" aria-hidden="true">
@@ -65,6 +67,15 @@ let render
                   </dt>
                   <dd class="mt-1 text-3xl font-semibold text-gray-900">
                     <%s platform %> <%s architecture %>
+                  </dd>
+                </div>
+
+                <div class="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6">
+                  <dt class="text-sm font-medium text-gray-500 truncate">
+                    System Load
+                  </dt>
+                  <dd class="mt-1 text-3xl font-semibold text-gray-900">
+                    <%.2f load0 %> <%.2f load1 %> <%.2f load2 %>
                   </dd>
                 </div>
               </dl>

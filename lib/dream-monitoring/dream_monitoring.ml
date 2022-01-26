@@ -3,8 +3,12 @@ module Handler = struct
     Dream.html
       (Index_template.render ~prefix ~ocaml_version:Info.ocaml_version
          ~dream_version:(Info.dream_version ())
-         ~dashboard_version:(Info.version ()) ~platform:Info.platform_string
-         ~architecture:Info.arch_string ~uptime:(Info.uptime ()) ())
+         ~dashboard_version:(Info.version ())
+         ~platform:Info.platform_string
+         ~architecture:Info.arch_string
+         ~uptime:(Info.uptime ())
+         ~load:(Info.load ())
+         ())
 end
 
 module Router = struct

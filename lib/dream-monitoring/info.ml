@@ -106,6 +106,9 @@ let os_machine () =
   let+ uname = Luv.System_info.uname () in
   uname.Luv.System_info.Uname.machine
 
+let load () =
+  Luv.Resource.loadavg ()
+
 let get_field name data =
   let fields = Metrics.Data.fields data in
   List.find (fun field -> Metrics.key field = name) fields

@@ -49,3 +49,5 @@ val os_version : unit -> string
 val os_machine : unit -> string
 val os_release : unit -> string
 val sysname : unit -> string
+
+val load : unit -> float * float * float
